@@ -76,12 +76,13 @@ ul {
   display: flex;
   font-size: 1.2rem;
   font-weight: 500;
-  letter-spacing: -0.05px;
+  letter-spacing: -0.01px;
   list-style-type: none;
   text-transform: uppercase;
 }
 
 .header .header__inner .header__menu--list .header__menu--item {
+  position: relative;
   margin-right: 29px;
   margin-top: 10px;
 }
@@ -90,12 +91,98 @@ ul {
   margin-right: 0;
 }
 
+.header .header__inner .header__menu--list .header__menu--item:not(:last-child):after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 3px;
+  height: 3px;
+  background-color: #434759;
+  border-radius: 50%;
+}
+
 .header .header__inner .header__menu--list .header__menu--item a {
   text-decoration: none;
   color: #ffffff;
+  -webkit-transition: color 0.5s linear;
+  transition: color 0.5s linear;
+}
+
+.header .header__inner .header__menu--list .header__menu--item a:hover {
+  color: #f06c64;
+  text-decoration: underline;
 }
 
 .header .header__inner .header__menu--list .header__menu--active a {
   color: #f06c64;
+}
+
+.slider {
+  height: 600px;
+  background-color: #f06c64;
+  border-bottom: 6px solid #ea676b;
+}
+
+.slider .slider__inner {
+  position: relative;
+  height: 590px;
+  /*   padding: 0 40px; */
+}
+
+.slider .slider__inner .slider__prev {
+  content: '';
+  position: absolute;
+  top: 279px;
+  left: 0;
+  width: 20px;
+  height: 30px;
+  background-image: url("assets/img/prev.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+
+.slider .slider__inner .slider__prev:hover {
+  -webkit-transform: translateX(-5px) scale(1.2);
+          transform: translateX(-5px) scale(1.2);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.slider .slider__inner .slider__next {
+  content: '';
+  position: absolute;
+  top: 279px;
+  right: -2px;
+  width: 20px;
+  height: 30px;
+  background-image: url("assets/img/next.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  cursor: pointer;
+}
+
+.slider .slider__inner .slider__next:hover {
+  -webkit-transform: translateX(5px) scale(1.2);
+          transform: translateX(5px) scale(1.2);
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
+
+.services {
+  height: 500px;
+  background-color: #f2f2f2;
+  border-bottom: 6px solid #ffffff;
+}
+
+.services .services__inner {
+  padding: 65px 38px 70px 40px;
 }
 /*# sourceMappingURL=singolo1.css.map */
