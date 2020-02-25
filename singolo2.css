@@ -1,1 +1,41 @@
-/* No CSS *//*# sourceMappingURL=singolo2.css.map */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Lato Regular', sans-serif;
+  font-size: 1.6rem;
+  background-color: #fefefe;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  width: 100%;
+  max-width: 1020px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+/*# sourceMappingURL=singolo2.css.map */
