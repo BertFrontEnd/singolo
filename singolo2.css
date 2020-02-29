@@ -98,6 +98,7 @@ body {
 
 .portfolio .portfolio__inner .portfolio__list--items .portfolio__list--item:last-child {
   margin-right: 0;
+  padding-left: 6px;
 }
 
 .portfolio .portfolio__inner .portfolio__list--items .portfolio__list--item:not(:first-child) {
@@ -214,6 +215,7 @@ body {
 
 .about .about__inner .about__team--item p {
   margin-bottom: 24px;
+  max-height: 42px;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
@@ -223,6 +225,7 @@ body {
   line-height: 21.55px;
   text-align: justify;
   letter-spacing: -0.1px;
+  overflow: hidden;
 }
 
 .about .about__inner .about__team--item:nth-child(2) {
