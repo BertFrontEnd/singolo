@@ -24,7 +24,7 @@ li {
 *:before,
 *:after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
@@ -83,8 +83,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .quote .quote__inner .quote__info .quote__info--form {
@@ -109,7 +109,11 @@ body {
   line-height: 36px;
 }
 
-.quote .quote__inner .quote__info .quote__info--form input::-webkit-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  input::-webkit-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -117,7 +121,11 @@ body {
   letter-spacing: 0.1px;
 }
 
-.quote .quote__inner .quote__info .quote__info--form input:-ms-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  input:-ms-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -125,7 +133,11 @@ body {
   letter-spacing: 0.1px;
 }
 
-.quote .quote__inner .quote__info .quote__info--form input::-ms-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  input::-ms-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -154,7 +166,11 @@ body {
   resize: none;
 }
 
-.quote .quote__inner .quote__info .quote__info--form textarea::-webkit-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  textarea::-webkit-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -162,7 +178,11 @@ body {
   letter-spacing: -0.01px;
 }
 
-.quote .quote__inner .quote__info .quote__info--form textarea:-ms-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  textarea:-ms-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -170,7 +190,11 @@ body {
   letter-spacing: -0.01px;
 }
 
-.quote .quote__inner .quote__info .quote__info--form textarea::-ms-input-placeholder {
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--form
+  textarea::-ms-input-placeholder {
   color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
@@ -198,9 +222,9 @@ body {
   border-radius: 5px;
   outline: none;
   font-family: 'Lato Regular', sans-serif;
-  color: #f0d8d9;
   font-size: 1.2rem;
   font-weight: 400;
+  color: #f0d8d9;
   letter-spacing: 0.1px;
   line-height: 36px;
   cursor: pointer;
@@ -222,13 +246,13 @@ body {
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.8rem;
   font-weight: 900;
-  letter-spacing: 0.35px;
   color: #f0d8d9;
+  letter-spacing: 0.35px;
 }
 
 .quote .quote__inner .quote__info .quote__info--contact p {
   margin-bottom: 23px;
-  max-width: 298px;
+  max-width: 300px;
   color: #f0d8d9;
   font-family: 'Lato Regular', sans-serif;
   font-size: 12px;
@@ -236,6 +260,7 @@ body {
   text-align: justify;
   line-height: 21.9px;
   letter-spacing: -0.1px;
+  overflow: hidden;
 }
 
 .quote .quote__inner .quote__info .quote__info--contact address ul {
@@ -243,23 +268,161 @@ body {
 }
 
 .quote .quote__inner .quote__info .quote__info--contact address ul li {
+  position: relative;
   padding-left: 23px;
 }
 
-.quote .quote__inner .quote__info .quote__info--contact address ul li:last-child {
-  letter-spacing: 0.1px;
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(1) {
+  letter-spacing: -0.15px;
+}
+
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(1):before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background: url('assets/img/get-a-quote/location.svg') no-repeat;
+  width: 12px;
+  height: 12px;
+}
+
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(2) {
+  letter-spacing: -0.2px;
+}
+
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(2):before {
+  content: '';
+  position: absolute;
+  top: 4px;
+  left: 0;
+  background: url('assets/img/get-a-quote/phone.svg') no-repeat;
+  width: 12px;
+  height: 12px;
+}
+
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(3) {
+  letter-spacing: 0.01px;
+}
+
+.quote
+  .quote__inner
+  .quote__info
+  .quote__info--contact
+  address
+  ul
+  li:nth-child(3):before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 0;
+  background: url('assets/img/get-a-quote/envelope.svg') no-repeat;
+  width: 13px;
+  height: 12px;
 }
 
 .quote .quote__inner .quote__info .quote__info--contact address ul li a {
-  color: #f0d8d9;
-  font-family: 'Lato regular', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-style: normal;
   font-weight: 400;
+  color: #f0d8d9;
 }
 
 .footer {
-  padding: 22px 40px;
   background-color: #2d303a;
 }
-/*# sourceMappingURL=singolo3.css.map */
+
+.footer .footer__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 22px 0;
+}
+
+.footer .footer__inner .footer__copyright p {
+  position: relative;
+  top: 9px;
+  left: 2px;
+  font-family: 'Lato Regular', sans-serif;
+  font-size: 1.2rem;
+  font-style: normal;
+  font-weight: 400;
+  color: #666d89;
+  letter-spacing: -0.2px;
+}
+
+.footer .footer__inner .footer__social ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer .footer__inner .footer__social ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #666d89;
+  border-radius: 50%;
+}
+
+.footer .footer__inner .footer__social ul li:hover {
+  background-color: #666d89;
+}
+
+.footer .footer__inner .footer__social ul li:hover .social {
+  fill: #f2f2f2;
+}
+
+.footer .footer__inner .footer__social ul li:last-child {
+  margin-right: 0;
+}
+
+.footer .footer__inner .footer__social ul li .social {
+  display: block;
+  width: 14px;
+  fill: #666d89;
+  -webkit-transition: fill 0.2s linear;
+  transition: fill 0.2s linear;
+}
