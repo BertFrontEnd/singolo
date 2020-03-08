@@ -558,6 +558,8 @@ body {
   letter-spacing: 0.1px;
   color: #666d89;
   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .about .about__inner .about__team_item p {
@@ -605,6 +607,7 @@ body {
   background-color: transparent;
   -webkit-transition: background-color 0.2s linear;
   transition: background-color 0.2s linear;
+  cursor: pointer;
 }
 
 .about .about__inner .about__team li:hover {
@@ -689,35 +692,40 @@ body {
   letter-spacing: 0.1px;
 }
 
+.quote .quote__inner .quote__info .quote__info_form input:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
 .quote .quote__inner .quote__info .quote__info_form input::-webkit-input-placeholder {
-  color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+  color: #f48c8f;
   letter-spacing: 0.1px;
 }
 
 .quote .quote__inner .quote__info .quote__info_form input:-ms-input-placeholder {
-  color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+  color: #f48c8f;
   letter-spacing: 0.1px;
 }
 
 .quote .quote__inner .quote__info .quote__info_form input::-ms-input-placeholder {
-  color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+  color: #f48c8f;
   letter-spacing: 0.1px;
 }
 
 .quote .quote__inner .quote__info .quote__info_form input::placeholder {
-  color: #f48c8f;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
   font-weight: 400;
+  color: #f48c8f;
   letter-spacing: 0.1px;
 }
 
@@ -727,6 +735,10 @@ body {
   height: 202px;
   padding-top: 12px;
   padding-left: 15px;
+  font-family: 'Lato Regular', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #f0d8d9;
   background-color: #d6564f;
   border: 0;
   border-radius: 5px;
@@ -782,8 +794,8 @@ body {
   color: #f0d8d9;
   letter-spacing: 0.1px;
   cursor: pointer;
-  -webkit-transition: background-color 0.2s linear, color 0.2s linear;
-  transition: background-color 0.2s linear, color 0.2s linear;
+  -webkit-transition: all 0.2s linear;
+  transition: all 0.2s linear;
 }
 
 .quote .quote__inner .quote__info .quote__info_form button:hover {
@@ -945,6 +957,10 @@ body {
   height: 32px;
   border: 1px solid #666d89;
   border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  -webkit-transition: background-color 0.2s linear;
+  transition: background-color 0.2s linear;
 }
 
 .footer .footer__inner .footer__social ul li:hover {
@@ -966,5 +982,28 @@ body {
   fill: #666d89;
   -webkit-transition: fill 0.2s linear;
   transition: fill 0.2s linear;
+}
+
+@-moz-document url-prefix() {
+  div.for-moz {
+    padding-bottom: 66px !important;
+  }
+  input.for-moz {
+    width: 619px !important;
+    padding-bottom: 12px !important;
+    padding-top: 11px !important;
+  }
+  textarea.for-moz {
+    width: 619px !important;
+    padding-top: 10px !important;
+  }
+  button.for-moz {
+    bottom: 1px !important;
+  }
+  div.for-moz > h3 {
+    font-family: 'Lato Bold', sans-serif !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.06px !important;
+  }
 }
 /*# sourceMappingURL=style.css.map */

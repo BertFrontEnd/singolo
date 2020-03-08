@@ -437,7 +437,7 @@
 
       <section class="quote">
         <div class="container">
-          <div class="quote__inner">
+          <div class="quote__inner for-moz">
             <div class="quote__title">
               <h2>Get a Quote</h2>
               <p>
@@ -450,18 +450,40 @@
             <div class="quote__info">
               <div class="quote__info_form">
                 <form action="/" method="POST" name="quote">
-                  <input type="text" placeholder="Name (Required)" required />
-                  <input type="email" placeholder="Email (Required)" required />
-                  <input type="text" placeholder="Subject" />
+                  <input
+                    class="for-moz"
+                    type="text"
+                    name="name"
+                    placeholder="Name (Required)"
+                    required
+                  />
+                  <input
+                    class="for-moz"
+                    type="email"
+                    name="email"
+                    formmethod="POST"
+                    placeholder="Email (Required)"
+                    required
+                  />
+                  <input
+                    class="for-moz"
+                    type="text"
+                    name="subject"
+                    formmethod="POST"
+                    placeholder="Subject"
+                  />
                   <textarea
+                    class="for-moz"
                     cols="30"
                     rows="10"
+                    name="message"
+                    formmethod="POST"
                     placeholder="Describe your project in detail..."
                   ></textarea>
-                  <button type="submit">Submit</button>
+                  <button class="for-moz" type="submit">Submit</button>
                 </form>
               </div>
-              <div class="quote__info_contact">
+              <div class="quote__info_contact for-moz">
                 <h3>Contact Information</h3>
                 <p>
                   Quisque hendrerit purus dapibus, ornare nibh vitae,
