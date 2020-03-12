@@ -21,6 +21,7 @@ li {
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 *,
@@ -43,9 +44,15 @@ body {
 }
 
 .header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   padding: 33px 0 31px;
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+  z-index: 999;
 }
 
 .header .header__inner {
@@ -117,8 +124,16 @@ body {
   text-decoration: underline;
 }
 
-.header .header__inner .header__menu ul .header__menu_active a {
+.header .header__inner .header__menu ul a.active {
   color: #f06c64;
+  text-decoration: underline;
+}
+
+.sticky {
+  padding: 16px 0 11px;
+  border-color: transparent;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 
 .slider {
@@ -141,7 +156,7 @@ body {
   left: 0;
   width: 20px;
   height: 30px;
-  background-image: url("assets/img/slider/prev.png");
+  background-image: url("assets/img/slider/arrow-left.svg");
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-transition: all 0.2s linear;
@@ -167,10 +182,11 @@ body {
   position: relative;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_vertical {
+.slider .slider__inner .slider__iphone .slider__iphone_vertical img {
   position: absolute;
   top: 53px;
   left: 72px;
+  cursor: pointer;
   z-index: 2;
 }
 
@@ -186,7 +202,16 @@ body {
   background-repeat: no-repeat;
   background-size: inherit;
   background-position: -14px -135px;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
   z-index: 3;
+}
+
+.slider .slider__inner .slider__iphone .switcher {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .slider .slider__inner .slider__iphone .slider__iphone_vertical_shadow {
@@ -202,10 +227,11 @@ body {
   z-index: 1;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_horizontal {
+.slider .slider__inner .slider__iphone .slider__iphone_horizontal img {
   position: absolute;
   top: 174px;
   right: 97px;
+  cursor: pointer;
   z-index: 2;
 }
 
@@ -220,7 +246,18 @@ body {
   background-image: url("assets/img/slider/iphone-horizontal-pic-full.png");
   background-size: inherit;
   background-position: -125px -119px;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
   z-index: 3;
+}
+
+.slider .slider__inner .slider__iphone .switch {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .slider .slider__inner .slider__iphone .slider__iphone_horizontal_shadow {
@@ -243,7 +280,7 @@ body {
   right: -2px;
   width: 20px;
   height: 30px;
-  background-image: url("assets/img/slider/next.png");
+  background-image: url("assets/img/slider/arrow-right.svg");
   background-repeat: no-repeat;
   background-position: center center;
   -webkit-transition: all 0.2s linear;
