@@ -1,59 +1,53 @@
-const myAnchors = document.querySelector(
-  '.header .header__inner .header__menu ul'
-);
+const myLinks = document.querySelector('.header__menu ul');
+const myAnchor = document.querySelector('.header');
 
-myAnchors.addEventListener('click', e => {
-  const links = myAnchors.querySelectorAll('a');
-  console.log(links);
-  const anchor = document.querySelector('.header');
-  console.log(anchor);
+/* let = myScrollHeight = document.documentElement.scrollHeight;
+let = myScrollTop = document.documentElement.scrollTop;
+let = myOffsetTop = document.documentElement.offsetTop;
+let = myClientHeight = document.documentElement.clientHeight;
+let = myPageYOffset = window.pageYOffset; */
 
+/* window.addEventListener('scroll', function() {
+  if (myPageYOffset > 0) {
+    myAnchor.classList.add('sticky');
+  } else if (myPageYOffset === 0) {
+    myAnchor.classList.remove('sticky');
+  }
+  console.log('pageYOffset = ' + myPageYOffset);
+  console.log(myAnchor);
+}); */
+
+myLinks.addEventListener('click', e => {
+  const links = myLinks.querySelectorAll('a');
   links.forEach(el => el.classList.remove('active'));
   e.target.classList.add('active');
 
-  anchor.classList.add('sticky');
+  myAnchor.classList.add('sticky');
   if (e.target === links[0]) {
-    anchor.classList.remove('sticky');
+    myAnchor.classList.remove('sticky');
   }
 });
 
-const myPhoneVertical = document.querySelector(
-  '.slider .slider__inner .slider__iphone_main .slider__iphone_vertical'
-);
-const myPhoneHorizontal = document.querySelector(
-  '.slider .slider__inner .slider__iphone_main .slider__iphone_horizontal'
-);
-const myPhoneMiddle = document.querySelector(
-  '.slider .slider__inner .slider__iphone_middle img'
-);
+const myPhoneVertical = document.querySelector('.slider__iphone_vertical');
+const myPhoneHorizontal = document.querySelector('.slider__iphone_horizontal');
+const myPhoneMiddle = document.querySelector('.slider__iphone_middle img');
 
 myPhoneVertical.addEventListener('click', () => {
-  const iphone = document.querySelector(
-    '.slider .slider__inner .slider__iphone_main .slider__iphone_vertical_pic'
-  );
+  const iphone = document.querySelector('.slider__iphone_vertical_pic');
   iphone.classList.toggle('switch');
 });
 
 myPhoneHorizontal.addEventListener('click', () => {
-  const iphone = document.querySelector(
-    '.slider .slider__inner .slider__iphone_main .slider__iphone_horizontal_pic'
-  );
+  const iphone = document.querySelector('.slider__iphone_horizontal_pic');
   iphone.classList.toggle('switch');
 });
 
 myPhoneMiddle.addEventListener('click', () => {
-  const iphone = document.querySelector(
-    '.slider .slider__inner .slider__iphone_middle .slider__iphone_middle_pic'
-  );
+  const iphone = document.querySelector('.slider__iphone_middle_pic');
   iphone.classList.toggle('switch');
 });
 
 const myIphones = document.querySelectorAll('.phone');
-/* console.log(myIphones);
-console.log(myIphones.length);
-console.log(myIphones[0]);
-console.log(myIphones[1]); */
-
 const leftArrow = document.querySelector('.slider__prev');
 const rightArrow = document.querySelector('.slider__next');
 const bgColor = document.querySelector('.slider');
@@ -106,4 +100,56 @@ rightArrow.addEventListener('click', () => {
     previousIphone(currentIphone);
     bgColor.classList.toggle('bg-color');
   }
+});
+
+const myTab = document.querySelector('.portfolio__list ul');
+const myPictures = document.querySelector('.portfolio__images ul');
+const pictures = document.querySelectorAll('.portfolio__images ul img');
+
+myTab.addEventListener('click', e => {
+  const tabs = myTab.querySelectorAll('li');
+  tabs.forEach(el => el.classList.remove('active'));
+  e.target.classList.add('active');
+
+  picturesSrc = [];
+  pictures.forEach(el => picturesSrc.push(el.src));
+  picturesSrc.sort(() => Math.random() - 1);
+  for (let i = 0; i < picturesSrc.length; i++) {
+    pictures[i].src = picturesSrc[i];
+  }
+
+  pictures.forEach(el => el.classList.remove('active'));
+});
+
+myPictures.addEventListener('click', e => {
+  pictures.forEach(el => el.classList.remove('active'));
+  e.target.classList.add('active');
+});
+
+const myForm = document.querySelector('form');
+const myPopup = document.querySelector('.pop-up');
+const btnForm = document.querySelector('form button');
+const btnPopup = document.querySelector('.pop-up button');
+
+myForm.addEventListener('submit', e => {
+  e.preventDefault();
+  if (myForm.checkValidity()) {
+    document.querySelector(
+      '.pop-up__message_subject span'
+    ).innerText = document.querySelector('.subject').value
+      ? document.querySelector('.subject').value
+      : 'Singolo';
+    document.querySelector(
+      '.pop-up__message_description span'
+    ).innerText = document.querySelector('.description').value
+      ? document.querySelector('.description').value
+      : 'Portfolio project';
+  }
+  myPopup.classList.remove('pop-up__hidden');
+  console.log(btnForm);
+  myForm.reset();
+});
+
+btnPopup.addEventListener('click', () => {
+  myPopup.classList.add('pop-up__hidden');
 });

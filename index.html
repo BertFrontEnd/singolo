@@ -202,9 +202,7 @@
             </div>
             <div class="portfolio__list">
               <ul>
-                <li class=" portfolio__list_active">
-                  All
-                </li>
+                <li class="active">All</li>
                 <li>Web Design</li>
                 <li>Graphic Design</li>
                 <li>Artwork</li>
@@ -476,13 +474,13 @@
                     required
                   />
                   <input
-                    class="for-moz"
+                    class="subject for-moz"
                     type="text"
                     name="subject"
                     placeholder="Subject"
                   />
                   <textarea
-                    class="for-moz"
+                    class="description for-moz"
                     cols="30"
                     rows="10"
                     name="message"
@@ -516,6 +514,21 @@
                 </address>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="pop-up pop-up__hidden">
+        <div class="pop-up__inner">
+          <div class="pop-up__message">
+            <h3>The letter was sent</h3>
+            <div class="pop-up__message_subject">
+              <p>Subject: <span></span></p>
+            </div>
+            <div class="pop-up__message_description">
+              <p>Description: <span></span></p>
+            </div>
+            <button>OK</button>
           </div>
         </div>
       </section>
