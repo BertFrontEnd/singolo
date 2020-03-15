@@ -142,6 +142,8 @@ body {
   min-width: 940px;
   background-color: #f06c64;
   border-bottom: 6px solid #ea676b;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .slider .slider__inner {
@@ -162,13 +164,15 @@ body {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+  z-index: 999;
 }
 
 .slider .slider__inner .slider__prev:hover {
-  -webkit-transform: translateX(-3px) scale(1.2);
-          transform: translateX(-3px) scale(1.2);
+  -webkit-transform: translateX(-2px) scale(1.1);
+          transform: translateX(-2px) scale(1.1);
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  z-index: 999;
 }
 
 .slider .slider__inner .slider__prev:active {
@@ -176,13 +180,14 @@ body {
           transform: translateX(0) scale(1);
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  z-index: 999;
 }
 
-.slider .slider__inner .slider__iphone {
+.slider .slider__inner .slider__iphone_main {
   position: relative;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_vertical img {
+.slider .slider__inner .slider__iphone_main .slider__iphone_vertical img {
   position: absolute;
   top: 53px;
   left: 72px;
@@ -190,7 +195,7 @@ body {
   z-index: 2;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_vertical_pic {
+.slider .slider__inner .slider__iphone_main .slider__iphone_vertical_pic {
   position: absolute;
   top: 118px;
   left: 86px;
@@ -208,13 +213,13 @@ body {
   z-index: 3;
 }
 
-.slider .slider__inner .slider__iphone .switcher {
+.slider .slider__inner .slider__iphone_main .switcher {
   opacity: 0;
   -webkit-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_vertical_shadow {
+.slider .slider__inner .slider__iphone_main .slider__iphone_vertical_shadow {
   position: absolute;
   top: 53px;
   left: 72px;
@@ -227,7 +232,7 @@ body {
   z-index: 1;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_horizontal img {
+.slider .slider__inner .slider__iphone_main .slider__iphone_horizontal img {
   position: absolute;
   top: 174px;
   right: 97px;
@@ -235,7 +240,7 @@ body {
   z-index: 2;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_horizontal_pic {
+.slider .slider__inner .slider__iphone_main .slider__iphone_horizontal_pic {
   position: absolute;
   top: 188px;
   right: 162px;
@@ -246,21 +251,19 @@ body {
   background-image: url("assets/img/slider/iphone-horizontal-pic-full.png");
   background-size: inherit;
   background-position: -125px -119px;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
   opacity: 1;
   -webkit-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
   z-index: 3;
 }
 
-.slider .slider__inner .slider__iphone .switch {
+.slider .slider__inner .slider__iphone_main .switch {
   opacity: 0;
   -webkit-transition: opacity 0.5s linear;
   transition: opacity 0.5s linear;
 }
 
-.slider .slider__inner .slider__iphone .slider__iphone_horizontal_shadow {
+.slider .slider__inner .slider__iphone_main .slider__iphone_horizontal_shadow {
   position: absolute;
   top: 174px;
   right: 71px;
@@ -271,6 +274,37 @@ body {
   background-size: cover;
   background-position: 0 0;
   z-index: 1;
+}
+
+.slider .slider__inner .slider__iphone_middle {
+  position: relative;
+}
+
+.slider .slider__inner .slider__iphone_middle img {
+  position: absolute;
+  top: 43px;
+  left: 252px;
+  cursor: pointer;
+}
+
+.slider .slider__inner .slider__iphone_middle .slider__iphone_middle_pic {
+  position: absolute;
+  top: 112px;
+  left: 398px;
+  content: '';
+  width: 199px;
+  height: 354px;
+  background-color: #000000;
+  background-image: url("assets/img/slider/iphone-middle-pic.png");
+  opacity: 1;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.slider .slider__inner .slider__iphone_middle .switch {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
 }
 
 .slider .slider__inner .slider__next {
@@ -286,13 +320,15 @@ body {
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear;
   cursor: pointer;
+  z-index: 999;
 }
 
 .slider .slider__inner .slider__next:hover {
-  -webkit-transform: translateX(3px) scale(1.2);
-          transform: translateX(3px) scale(1.2);
+  -webkit-transform: translateX(2px) scale(1.1);
+          transform: translateX(2px) scale(1.1);
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  z-index: 999;
 }
 
 .slider .slider__inner .slider__next:active {
@@ -300,6 +336,97 @@ body {
           transform: translateX(0) scale(1);
   -webkit-transform-origin: center center;
           transform-origin: center center;
+  z-index: 999;
+}
+
+.bg-color {
+  background-color: #648bf0;
+  border-bottom: 6px solid #649bf0;
+  -webkit-transition: all 0.7s ease-in-out;
+  transition: all 0.7s ease-in-out;
+}
+
+.phone {
+  display: none;
+  -webkit-animation: 0.7s ease-in-out;
+          animation: 0.7s ease-in-out;
+}
+
+.slider-active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  -webkit-animation-name: left;
+          animation-name: left;
+}
+
+.from-right {
+  -webkit-animation-name: right;
+          animation-name: right;
+}
+
+.to-right {
+  -webkit-animation-name: right;
+          animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  -webkit-animation-name: left;
+          animation-name: left;
+  animation-direction: reverse;
+}
+
+@-webkit-keyframes left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@keyframes left {
+  from {
+    left: 0;
+    opacity: 1;
+  }
+  to {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes right {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
 }
 
 .services {
