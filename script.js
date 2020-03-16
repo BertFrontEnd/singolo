@@ -1,31 +1,9 @@
 const myLinks = document.querySelector('.header__menu ul');
-const myAnchor = document.querySelector('.header');
-
-/* let = myScrollHeight = document.documentElement.scrollHeight;
-let = myScrollTop = document.documentElement.scrollTop;
-let = myOffsetTop = document.documentElement.offsetTop;
-let = myClientHeight = document.documentElement.clientHeight;
-let = myPageYOffset = window.pageYOffset; */
-
-/* window.addEventListener('scroll', function() {
-  if (myPageYOffset > 0) {
-    myAnchor.classList.add('sticky');
-  } else if (myPageYOffset === 0) {
-    myAnchor.classList.remove('sticky');
-  }
-  console.log('pageYOffset = ' + myPageYOffset);
-  console.log(myAnchor);
-}); */
 
 myLinks.addEventListener('click', e => {
   const links = myLinks.querySelectorAll('a');
   links.forEach(el => el.classList.remove('active'));
   e.target.classList.add('active');
-
-  myAnchor.classList.add('sticky');
-  if (e.target === links[0]) {
-    myAnchor.classList.remove('sticky');
-  }
 });
 
 const myPhoneVertical = document.querySelector('.slider__iphone_vertical');
@@ -111,10 +89,6 @@ myTab.addEventListener('click', e => {
   tabs.forEach(el => el.classList.remove('active'));
   e.target.classList.add('active');
 
-/*   if (e.target.classList.contain('active')) {
-    e.preventDefault();
-  }; */
-
   picturesSrc = [];
   pictures.forEach(el => picturesSrc.push(el.src));
   picturesSrc.sort(() => Math.random() - 1);
@@ -149,10 +123,9 @@ myForm.addEventListener('submit', e => {
       ? document.querySelector('.description').value
       : 'Portfolio project';
   }
+
   myPopup.classList.remove('pop-up__hidden');
-  document.body.style.overflow = "hidden";
-  /* document.body.style.filter = "blur(5px)" */
-  console.log(btnForm);
+  document.body.style.overflow = 'hidden';
   myForm.reset();
 });
 
