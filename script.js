@@ -111,6 +111,10 @@ myTab.addEventListener('click', e => {
   tabs.forEach(el => el.classList.remove('active'));
   e.target.classList.add('active');
 
+/*   if (e.target.classList.contain('active')) {
+    e.preventDefault();
+  }; */
+
   picturesSrc = [];
   pictures.forEach(el => picturesSrc.push(el.src));
   picturesSrc.sort(() => Math.random() - 1);
@@ -146,10 +150,13 @@ myForm.addEventListener('submit', e => {
       : 'Portfolio project';
   }
   myPopup.classList.remove('pop-up__hidden');
+  document.body.style.overflow = "hidden";
+  /* document.body.style.filter = "blur(5px)" */
   console.log(btnForm);
   myForm.reset();
 });
 
 btnPopup.addEventListener('click', () => {
   myPopup.classList.add('pop-up__hidden');
+  document.body.style.overflow = 'auto';
 });
