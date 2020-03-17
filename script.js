@@ -6,22 +6,24 @@ myLinks.addEventListener('click', e => {
   e.target.classList.add('active');
 });
 
-const myPhoneVertical = document.querySelector('.slider__iphone_vertical');
-const myPhoneHorizontal = document.querySelector('.slider__iphone_horizontal');
-const myPhoneMiddle = document.querySelector('.slider__iphone_middle img');
+const btnHomeVertical = document.querySelector('.slider__iphone_vertical-home');
+const btnHomeHorizontal = document.querySelector(
+  '.slider__iphone_horizontal-home'
+);
+const btnHomeMiddle = document.querySelector('.slider__iphone_middle-home');
 
-myPhoneVertical.addEventListener('click', () => {
-  const iphone = document.querySelector('.slider__iphone_vertical_pic');
+btnHomeVertical.addEventListener('click', () => {
+  const iphone = document.querySelector('.slider__iphone_vertical-pic');
   iphone.classList.toggle('switch');
 });
 
-myPhoneHorizontal.addEventListener('click', () => {
-  const iphone = document.querySelector('.slider__iphone_horizontal_pic');
+btnHomeHorizontal.addEventListener('click', () => {
+  const iphone = document.querySelector('.slider__iphone_horizontal-pic');
   iphone.classList.toggle('switch');
 });
 
-myPhoneMiddle.addEventListener('click', () => {
-  const iphone = document.querySelector('.slider__iphone_middle_pic');
+btnHomeMiddle.addEventListener('click', () => {
+  const iphone = document.querySelector('.slider__iphone_middle-pic');
   iphone.classList.toggle('switch');
 });
 
