@@ -124,7 +124,7 @@ body {
   text-decoration: underline;
 }
 
-.header .header__inner .header__menu ul a.active {
+.header .header__inner .header__menu ul li a.menu-active {
   color: #f06c64;
   text-decoration: underline;
 }
@@ -727,7 +727,7 @@ body {
   border-color: #c5c5c5;
 }
 
-.portfolio .portfolio__inner .portfolio__list ul li.active {
+.portfolio .portfolio__inner .portfolio__list ul li.tab-active {
   color: #c5c5c5;
   border-color: #c5c5c5;
 }
@@ -766,7 +766,7 @@ body {
   filter: invert(1);
 }
 
-.portfolio .portfolio__inner .portfolio__images ul li img.active {
+.portfolio .portfolio__inner .portfolio__images ul li img.pic-active {
   border: 5px solid #f06c64;
 }
 

@@ -1,10 +1,14 @@
+/* Menu */
+
 const myLinks = document.querySelector('.header__menu ul');
 
 myLinks.addEventListener('click', e => {
   const links = myLinks.querySelectorAll('a');
-  links.forEach(el => el.classList.remove('active'));
-  e.target.classList.add('active');
+  links.forEach(el => el.classList.remove('menu-active'));
+  e.target.classList.add('menu-active');
 });
+
+/* Screen */
 
 const btnHomeVertical = document.querySelector('.slider__iphone_vertical-home');
 const btnHomeHorizontal = document.querySelector(
@@ -26,6 +30,8 @@ btnHomeMiddle.addEventListener('click', () => {
   const iphone = document.querySelector('.slider__iphone_middle-pic');
   iphone.classList.toggle('switch');
 });
+
+/* Slider */
 
 const myIphones = document.querySelectorAll('.phone');
 const leftArrow = document.querySelector('.slider__prev');
@@ -82,29 +88,35 @@ rightArrow.addEventListener('click', () => {
   }
 });
 
+/* Tabs */
+
 const myTab = document.querySelector('.portfolio__list ul');
 const myPictures = document.querySelector('.portfolio__images ul');
-const pictures = document.querySelectorAll('.portfolio__images ul img');
+const picturesShuffle = document.querySelectorAll('.portfolio__images ul img');
 
 myTab.addEventListener('click', e => {
   const tabs = myTab.querySelectorAll('li');
-  tabs.forEach(el => el.classList.remove('active'));
-  e.target.classList.add('active');
+  if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
+    tabs.forEach(el => el.classList.remove('tab-active'));
+  }
+  e.target.classList.add('tab-active');
 
   picturesSrc = [];
-  pictures.forEach(el => picturesSrc.push(el.src));
+  picturesShuffle.forEach(el => picturesSrc.push(el.src));
   picturesSrc.sort(() => Math.random() - 1);
   for (let i = 0; i < picturesSrc.length; i++) {
-    pictures[i].src = picturesSrc[i];
+    picturesShuffle[i].src = picturesSrc[i];
   }
 
-  pictures.forEach(el => el.classList.remove('active'));
+  picturesShuffle.forEach(el => el.classList.remove('pic-active'));
 });
 
 myPictures.addEventListener('click', e => {
-  pictures.forEach(el => el.classList.remove('active'));
-  e.target.classList.add('active');
+  picturesShuffle.forEach(el => el.classList.remove('pic-active'));
+  e.target.classList.add('pic-active');
 });
+
+/* Form */
 
 const myForm = document.querySelector('form');
 const myPopup = document.querySelector('.pop-up');
