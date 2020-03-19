@@ -98,17 +98,18 @@ myTab.addEventListener('click', e => {
   const tabs = myTab.querySelectorAll('li');
   if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
     tabs.forEach(el => el.classList.remove('tab-active'));
+
+    picturesSrc = [];
+    picturesShuffle.forEach(el => picturesSrc.push(el.src));
+    picturesSrc.sort(() => Math.random() - 1);
+    for (let i = 0; i < picturesSrc.length; i++) {
+      picturesShuffle[i].src = picturesSrc[i];
+    }
+
+    picturesShuffle.forEach(el => el.classList.remove('pic-active'));
   }
+
   e.target.classList.add('tab-active');
-
-  picturesSrc = [];
-  picturesShuffle.forEach(el => picturesSrc.push(el.src));
-  picturesSrc.sort(() => Math.random() - 1);
-  for (let i = 0; i < picturesSrc.length; i++) {
-    picturesShuffle[i].src = picturesSrc[i];
-  }
-
-  picturesShuffle.forEach(el => el.classList.remove('pic-active'));
 });
 
 myPictures.addEventListener('click', e => {
