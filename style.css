@@ -730,6 +730,7 @@ body {
 .portfolio .portfolio__inner .portfolio__list ul li.tab-active {
   color: #c5c5c5;
   border-color: #c5c5c5;
+  cursor: not-allowed;
 }
 
 .portfolio .portfolio__inner .portfolio__images ul {

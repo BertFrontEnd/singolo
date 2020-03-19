@@ -1,11 +1,31 @@
 /* Menu */
 
-const myLinks = document.querySelector('.header__menu ul');
+/* const myLinks = document.querySelector('.header__menu ul');
 
 myLinks.addEventListener('click', e => {
   const links = myLinks.querySelectorAll('a');
   links.forEach(el => el.classList.remove('menu-active'));
   e.target.classList.add('menu-active');
+}); */
+
+document.addEventListener('scroll', e => {
+  const curPos = window.scrollY;
+  const section = document.querySelectorAll('main>.for-scroll');
+  const links = document.querySelectorAll('header a');
+
+  section.forEach(el => {
+    if (
+      el.offsetTop - 50 <= curPos &&
+      el.offsetTop + el.offsetHeight > curPos
+    ) {
+      links.forEach(a => {
+        a.classList.remove('menu-active');
+        if (el.getAttribute('id') === a.getAttribute('href').substring(1)) {
+          a.classList.add('menu-active');
+        }
+      });
+    }
+  });
 });
 
 /* Screen */
@@ -92,9 +112,27 @@ rightArrow.addEventListener('click', () => {
 
 const myTab = document.querySelector('.portfolio__list ul');
 const myPictures = document.querySelector('.portfolio__images ul');
-const picturesShuffle = document.querySelectorAll('.portfolio__images ul img');
+const borderImg = document.querySelectorAll('.portfolio__images ul li img');
 
 myTab.addEventListener('click', e => {
+  const tabs = myTab.querySelectorAll('li');
+
+  if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
+    tabs.forEach(el => el.classList.remove('tab-active'));
+  }
+
+  const picturesShuffle = myPictures.querySelectorAll('li');
+
+  myPictures.insertAdjacentElement(
+    'afterbegin',
+    picturesShuffle[picturesShuffle.length - 1]
+  );
+
+  borderImg.forEach(el => el.classList.remove('pic-active'));
+  e.target.classList.add('tab-active');
+});
+
+/* myTab.addEventListener('click', e => {
   const tabs = myTab.querySelectorAll('li');
   if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
     tabs.forEach(el => el.classList.remove('tab-active'));
@@ -110,11 +148,15 @@ myTab.addEventListener('click', e => {
   }
 
   e.target.classList.add('tab-active');
-});
+}); */
 
 myPictures.addEventListener('click', e => {
-  picturesShuffle.forEach(el => el.classList.remove('pic-active'));
-  e.target.classList.add('pic-active');
+  if (e.target.tagName === 'IMG') {
+    borderImg.forEach(el => {
+      el.classList.remove('pic-active');
+    });
+    e.target.classList.add('pic-active');
+  }
 });
 
 /* Form */
@@ -147,4 +189,8 @@ myForm.addEventListener('submit', e => {
 btnPopup.addEventListener('click', () => {
   myPopup.classList.add('pop-up__hidden');
   document.body.style.overflow = 'auto';
+  /*   document.querySelector('.pop-up__message').style.animationName =
+    'pop-up-zoom';
+  document.querySelector('.pop-up__message').style.animationDirection =
+    'reverse'; */
 });
