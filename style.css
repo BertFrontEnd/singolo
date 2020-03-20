@@ -1086,14 +1086,14 @@ body {
   bottom: 0;
   width: 300px;
   padding: 12px 15px;
-  background-color: #d6564f;
+  background-color: #fbc65f;
   border: 0;
   border-radius: 5px;
   outline: none;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
-  font-weight: 400;
-  color: #f0d8d9;
+  font-weight: 800;
+  color: #886a30;
   letter-spacing: 0.1px;
   text-transform: uppercase;
   cursor: pointer;
@@ -1294,7 +1294,7 @@ body {
 }
 
 .pop-up .pop-up__inner .pop-up__message .pop-up__message_subject p {
-  font-family: 'Lato Light', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
   color: #f0d8d9;
@@ -1302,7 +1302,8 @@ body {
 }
 
 .pop-up .pop-up__inner .pop-up__message .pop-up__message_subject p span {
-  font-family: 'Lato Regular', sans-serif;
+  font-family: 'Lato Light', sans-serif;
+  font-style: italic;
   font-size: 1.8rem;
   font-weight: 300;
   color: #f0d8d9;
@@ -1315,14 +1316,15 @@ body {
 }
 
 .pop-up .pop-up__inner .pop-up__message .pop-up__message_description p {
-  font-family: 'Lato Light', sans-serif;
+  font-family: 'Lato Regular', sans-serif;
   font-size: 1.8rem;
   font-weight: 300;
   color: #f0d8d9;
 }
 
 .pop-up .pop-up__inner .pop-up__message .pop-up__message_description p span {
-  font-family: 'Lato Regular', sans-serif;
+  font-family: 'Lato Light', sans-serif;
+  font-style: italic;
   font-size: 1.8rem;
   font-weight: 300;
   color: #f0d8d9;
@@ -1332,14 +1334,14 @@ body {
   margin-bottom: 40px;
   width: 100px;
   padding: 12px 15px;
-  background-color: #d6564f;
+  background-color: #fbc65f;
   border: 0;
   border-radius: 5px;
   outline: none;
   font-family: 'Lato Regular', sans-serif;
   font-size: 1.2rem;
-  font-weight: 400;
-  color: #f0d8d9;
+  font-weight: 800;
+  color: #886a30;
   letter-spacing: 0.1px;
   cursor: pointer;
   -webkit-transition: all 0.2s linear;

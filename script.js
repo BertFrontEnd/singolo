@@ -1,19 +1,13 @@
 /* Menu */
 
-/* const myLinks = document.querySelector('.header__menu ul');
-
-myLinks.addEventListener('click', e => {
-  const links = myLinks.querySelectorAll('a');
-  links.forEach(el => el.classList.remove('menu-active'));
-  e.target.classList.add('menu-active');
-}); */
+const myMenu = document.querySelector('.header__menu');
 
 document.addEventListener('scroll', e => {
   const curPos = window.scrollY;
-  const section = document.querySelectorAll('main>.for-scroll');
+  const sections = document.querySelectorAll('main>.for-scroll');
   const links = document.querySelectorAll('header a');
 
-  section.forEach(el => {
+  sections.forEach(el => {
     if (
       el.offsetTop - 50 <= curPos &&
       el.offsetTop + el.offsetHeight > curPos
@@ -26,6 +20,19 @@ document.addEventListener('scroll', e => {
       });
     }
   });
+
+  if (
+    document.documentElement.scrollTop +
+      document.documentElement.clientHeight ===
+    document.documentElement.scrollHeight
+  ) {
+    myMenu.querySelector('a.menu-active').classList.remove('menu-active');
+    links[links.length - 1].classList.add('menu-active');
+  }
+
+  /*   if (myMenu.querySelector('a.menu-active') === null) {
+    links[0].classList.add('menu-active');
+  } */
 });
 
 /* Screen */
@@ -183,12 +190,12 @@ myForm.addEventListener('submit', e => {
 
   myPopup.classList.remove('pop-up__hidden');
   document.body.style.overflow = 'hidden';
-  myForm.reset();
 });
 
 btnPopup.addEventListener('click', () => {
   myPopup.classList.add('pop-up__hidden');
   document.body.style.overflow = 'auto';
+  myForm.reset();
   /*   document.querySelector('.pop-up__message').style.animationName =
     'pop-up-zoom';
   document.querySelector('.pop-up__message').style.animationDirection =
