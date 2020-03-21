@@ -1,3 +1,3 @@
-# Singolo DOM
+# Singolo Responsive
 
-- Homework: [Singolo DOM](https://BertFrontEnd.github.io/singolo/index.html) -> Deadline: Saturday, March 21, 2020 23:59 -> Done
+- Homework: [Singolo Responsive](https://BertFrontEnd.github.io/singolo/index.html) -> Deadline: Saturday, March 28, 2020 23:59
