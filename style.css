@@ -209,6 +209,8 @@ body {
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 4;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -217,6 +219,8 @@ body {
   .slider__iphone_vertical-home:hover {
   -webkit-box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
   box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -290,6 +294,8 @@ body {
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 4;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -298,6 +304,8 @@ body {
   .slider__iphone_horizontal-home:hover {
   -webkit-box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
   box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -372,6 +380,8 @@ body {
   background-repeat: no-repeat;
   cursor: pointer;
   z-index: 4;
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -380,6 +390,8 @@ body {
   .slider__iphone_middle-home:hover {
   -webkit-box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
   box-shadow: 0px 0px 5px rgba(154, 147, 140, 0.5);
+  -webkit-transition: all 0.25s linear;
+  transition: all 0.25s linear;
 }
 
 .slider
@@ -730,7 +742,7 @@ body {
 .portfolio .portfolio__inner .portfolio__list ul li.tab-active {
   color: #c5c5c5;
   border-color: #c5c5c5;
-  cursor: not-allowed;
+  cursor: default;
 }
 
 .portfolio .portfolio__inner .portfolio__images ul {
@@ -739,16 +751,31 @@ body {
   display: flex;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
-  max-width: 940px;
-  max-height: 601px;
-  overflow: hidden;
+  /* max-width: 940px; */
+  /* max-height: 601px; */
+  /* overflow: hidden; */
 }
 
 .portfolio .portfolio__inner .portfolio__images ul li {
-  margin-right: 20px;
-  margin-bottom: 20px;
+  margin: 10px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
   font-size: 0;
   cursor: pointer;
+  /* &::before {
+            content: '';
+            float: left;
+            padding-top: 100%;
+          } */
+}
+
+.portfolio .portfolio__inner .portfolio__images ul li:nth-child(4n + 1) {
+  margin-left: 0;
 }
 
 .portfolio .portfolio__inner .portfolio__images ul li:nth-child(4n) {
@@ -756,10 +783,12 @@ body {
 }
 
 .portfolio .portfolio__inner .portfolio__images ul li img {
-  -webkit-transition: -webkit-filter 0.2s linear;
-  transition: -webkit-filter 0.2s linear;
-  transition: filter 0.2s linear;
-  transition: filter 0.2s linear, -webkit-filter 0.2s linear;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-filter 0.5s linear;
+  transition: -webkit-filter 0.5s linear;
+  transition: filter 0.5s linear;
+  transition: filter 0.5s linear, -webkit-filter 0.5s linear;
 }
 
 .portfolio .portfolio__inner .portfolio__images ul li img:hover {
@@ -768,7 +797,8 @@ body {
 }
 
 .portfolio .portfolio__inner .portfolio__images ul li img.pic-active {
-  border: 5px solid #f06c64;
+  -webkit-box-shadow: #f06c64 0px 0px 0px 5px;
+  box-shadow: #f06c64 0px 0px 0px 5px;
 }
 
 .about {
@@ -818,15 +848,15 @@ body {
   overflow: hidden;
 }
 
-.about .about__inner .about__team_item {
+.about .about__inner .about__team-item {
   max-width: 300px;
 }
 
-.about .about__inner .about__team_item img {
+.about .about__inner .about__team-item img {
   margin-bottom: 12px;
 }
 
-.about .about__inner .about__team_item h3 {
+.about .about__inner .about__team-item h3 {
   margin-bottom: 10px;
   height: 1.8rem;
   font-family: 'Lato Black', sans-serif;
@@ -839,7 +869,7 @@ body {
   text-overflow: ellipsis;
 }
 
-.about .about__inner .about__team_item p {
+.about .about__inner .about__team-item p {
   margin-bottom: 24px;
   max-height: 42px;
   font-family: 'Lato Regular', sans-serif;
@@ -852,11 +882,6 @@ body {
   text-align: justify;
   letter-spacing: -0.1px;
   overflow: hidden;
-}
-
-.about .about__inner .about__team_item:nth-child(2) {
-  -webkit-transform: translateX(-1px);
-  transform: translateX(-1px);
 }
 
 .about .about__inner .about__team ul {
@@ -1163,10 +1188,10 @@ body {
   li:nth-child(1):before {
   content: '';
   position: absolute;
-  top: 4px;
-  left: 0;
-  background: url('assets/img/get-a-quote/location.svg') no-repeat;
-  width: 12px;
+  top: 3px;
+  left: 1px;
+  background: url('assets/img/get-a-quote/ico-location.svg') no-repeat;
+  width: 8px;
   height: 12px;
 }
 
@@ -1189,9 +1214,9 @@ body {
   li:nth-child(2):before {
   content: '';
   position: absolute;
-  top: 4px;
+  top: 2px;
   left: 0;
-  background: url('assets/img/get-a-quote/phone.svg') no-repeat;
+  background: url('assets/img/get-a-quote/ico-phone.svg') no-repeat;
   background-size: 95%;
   width: 12px;
   height: 12px;
@@ -1216,11 +1241,11 @@ body {
   li:nth-child(3):before {
   content: '';
   position: absolute;
-  top: 6px;
+  top: 4px;
   left: 0;
-  background: url('assets/img/get-a-quote/envelope.svg') no-repeat;
+  background: url('assets/img/get-a-quote/ico-mail.svg') no-repeat;
   width: 13px;
-  height: 12px;
+  height: 9px;
 }
 
 .quote .quote__inner .quote__info .quote__info_contact address ul li a {

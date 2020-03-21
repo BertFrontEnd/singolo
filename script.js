@@ -126,14 +126,14 @@ myTab.addEventListener('click', e => {
 
   if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
     tabs.forEach(el => el.classList.remove('tab-active'));
+
+    const picturesShuffle = myPictures.querySelectorAll('li');
+
+    myPictures.insertAdjacentElement(
+      'afterbegin',
+      picturesShuffle[picturesShuffle.length - 1]
+    );
   }
-
-  const picturesShuffle = myPictures.querySelectorAll('li');
-
-  myPictures.insertAdjacentElement(
-    'afterbegin',
-    picturesShuffle[picturesShuffle.length - 1]
-  );
 
   borderImg.forEach(el => el.classList.remove('pic-active'));
   e.target.classList.add('tab-active');
