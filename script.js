@@ -4,7 +4,7 @@ const myMenu = document.querySelector('.header__menu');
 
 document.addEventListener('scroll', e => {
   const curPos = window.scrollY;
-  const sections = document.querySelectorAll('main>.for-scroll');
+  const sections = document.querySelectorAll('.for-scroll');
   const links = document.querySelectorAll('header a');
 
   sections.forEach(el => {
