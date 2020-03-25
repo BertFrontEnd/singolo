@@ -139,7 +139,7 @@ body {
   transition: all 0.5s linear;
 } */
 .slider {
-  height: 600px;
+  /* height: 600px; */
   /*   width: 100%;
   min-width: 940px; */
   background-color: #f06c64;
@@ -156,7 +156,7 @@ body {
 .slider .slider__inner .slider__prev {
   content: '';
   position: absolute;
-  top: 279px;
+  top: 50%;
   left: 0;
   width: 20px;
   height: 30px;
@@ -209,7 +209,7 @@ body {
 
 .slider .slider__inner .slider__iphone_main .slider__iphone_vertical img {
   position: relative;
-  width: 100%;
+  width: 240px;
   height: auto;
   /* border-radius: 30px; */
   -webkit-user-select: none;
@@ -228,8 +228,10 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  /* border: 1px solid black; */
   background-image: url("assets/img/slider/home.svg");
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: 100% auto;
   cursor: pointer;
   z-index: 4;
@@ -310,12 +312,15 @@ body {
   content: '';
   top: 87px;
   right: 432px;
-  /* opacity: 0.25; */
+  opacity: 0.5;
   width: 42px;
   height: 42px;
   border-radius: 50%;
+  /* border: 1px solid black; */
   background-image: url("assets/img/slider/home.svg");
   background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
   cursor: pointer;
   z-index: 4;
   -webkit-transition: all 0.25s linear;
@@ -346,6 +351,7 @@ body {
   /* background-color: #000000; */
   background-image: url("assets/img/slider/iphone-horizontal-pic.png");
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: 100% auto;
   /* background-position: -125px -119px; */
   opacity: 1;
@@ -436,8 +442,8 @@ body {
 .slider .slider__inner .slider__next {
   content: '';
   position: absolute;
-  top: 279px;
-  right: -2px;
+  top: 50%;
+  right: 0;
   width: 20px;
   height: 30px;
   background-image: url("assets/img/slider/arrow-right.svg");
@@ -1473,7 +1479,57 @@ body {
   transition: fill 0.2s linear;
 }
 
+/* @media screen and (max-width: 1019px) */
 @media (max-width: 1020px) and (min-width: 768px) {
+  .slider .slider__inner {
+    height: 58vw;
+  }
+  .slider .slider__inner .slider__prev {
+    left: -1.4%;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_vertical {
+    top: 5.5vw;
+    left: 7.1vw;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_vertical img {
+    width: 23.5vw;
+    height: auto;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_vertical .slider__iphone_vertical-home {
+    top: 39.9vw;
+    left: 8.5vw;
+    width: 4.12vw;
+    height: 4.12vw;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_vertical .slider__iphone_vertical-pic {
+    top: 6.4vw;
+    left: 1.35vw;
+    width: 18.4vw;
+    height: 32.6vw;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_horizontal {
+    top: 17.1vw;
+    left: 37.8vw;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_horizontal img {
+    width: 47.4vw;
+    height: auto;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_horizontal .slider__iphone_horizontal-home {
+    top: 8.5vw;
+    left: 0.8vw;
+    width: 4.12vw;
+    height: 4.12vw;
+  }
+  .slider .slider__inner .slider__iphone_main .slider__iphone_horizontal .slider__iphone_horizontal-pic {
+    top: 1.35vw;
+    left: 5.9vw;
+    width: 32.7vw;
+    height: 18.5vw;
+  }
+  .slider .slider__inner .slider__next {
+    right: -1.4%;
+  }
   .portfolio .portfolio__inner .portfolio__images ul li {
     -ms-flex-preferred-size: 25%;
         flex-basis: 25%;
