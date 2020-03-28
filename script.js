@@ -180,12 +180,12 @@ myForm.addEventListener('submit', e => {
       '.pop-up__message_subject span'
     ).innerText = document.querySelector('.subject').value
       ? document.querySelector('.subject').value
-      : 'Singolo';
+      : 'no subject';
     document.querySelector(
       '.pop-up__message_description span'
     ).innerText = document.querySelector('.description').value
       ? document.querySelector('.description').value
-      : 'Portfolio project';
+      : 'no description';
   }
 
   myPopup.classList.remove('pop-up__hidden');
@@ -200,4 +200,12 @@ btnPopup.addEventListener('click', () => {
     'pop-up-zoom';
   document.querySelector('.pop-up__message').style.animationDirection =
     'reverse'; */
+});
+
+/* Burger */
+
+const btnBurger = document.querySelector('.header__burger');
+
+btnBurger.addEventListener('click', () => {
+  btnBurger.classList.toggle('burger-active');
 });
