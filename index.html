@@ -70,22 +70,25 @@
     </svg>
 
     <header class="header">
-      <section id="home" class="home for-scroll">
+      <section class="home">
         <div class="container">
           <div class="header__inner">
             <div class="header__burger">
               <a href="#">
-                <span></span>
+                <span class="burger-line"></span>
+                <span class="burger-logo">
+                  <h2>Singolo<span>*</span></h2>
+                </span>
               </a>
             </div>
             <h1 class="header__logo">Singolo<span>*</span></h1>
             <nav class="header__menu">
               <ul>
-                <li><a class="menu-active" href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#quote">Contact</a></li>
+                <li><a class="link menu-active" href="#home">Home</a></li>
+                <li><a class="link" href="#services">Services</a></li>
+                <li><a class="link" href="#portfolio">Portfolio</a></li>
+                <li><a class="link" href="#about">About</a></li>
+                <li><a class="link" href="#quote">Contact</a></li>
               </ul>
             </nav>
           </div>
@@ -94,7 +97,7 @@
     </header>
 
     <main class="main">
-      <section class="slider">
+      <section id="home" class="slider for-scroll">
         <div class="container">
           <div class="slider__inner">
             <div class="slider__prev arrow"></div>
@@ -109,7 +112,6 @@
                   />
                   <div class="slider__iphone_vertical-home"></div>
                   <div class="slider__iphone_vertical-pic"></div>
-                  <!-- <div class="slider__iphone_vertical-shadow"></div> -->
                 </div>
                 <div class="slider__iphone_horizontal">
                   <img
@@ -120,7 +122,6 @@
                   />
                   <div class="slider__iphone_horizontal-home"></div>
                   <div class="slider__iphone_horizontal-pic"></div>
-                  <!-- <div class="slider__iphone_horizontal-shadow"></div> -->
                 </div>
               </div>
               <div class="slider__iphone_middle phone">
@@ -470,7 +471,7 @@
               </p>
             </div>
             <div class="quote__info">
-              <div class="quote__info_form">
+              <div class="quote__info-form">
                 <form action="/" method="POST" name="quote">
                   <input
                     class="for-moz"
@@ -502,7 +503,7 @@
                   <button class="for-moz" type="submit">Send</button>
                 </form>
               </div>
-              <div class="quote__info_contact for-moz">
+              <div class="quote__info-contact for-moz">
                 <h3>Contact Information</h3>
                 <p>
                   Quisque hendrerit purus dapibus, ornare nibh vitae,
@@ -535,10 +536,10 @@
         <div class="pop-up__inner">
           <div class="pop-up__message">
             <h3>The letter was sent</h3>
-            <div class="pop-up__message_subject">
+            <div class="pop-up__message-subject">
               <p>Subject: <span></span></p>
             </div>
-            <div class="pop-up__message_description">
+            <div class="pop-up__message-description">
               <p>Description: <span></span></p>
             </div>
             <button>OK</button>

@@ -5,11 +5,18 @@ const myMenu = document.querySelector('.header__menu');
 document.addEventListener('scroll', e => {
   const curPos = window.scrollY;
   const sections = document.querySelectorAll('.for-scroll');
-  const links = document.querySelectorAll('header a');
+  const links = document.querySelectorAll('.header .link');
 
   sections.forEach(el => {
+    let indent = 0;
+    if (window.matchMedia('(screen and (max-width: 767px)').matches) {
+      indent = 71;
+    } else {
+      indent = 95;
+    }
+
     if (
-      el.offsetTop - 50 <= curPos &&
+      el.offsetTop - indent <= curPos &&
       el.offsetTop + el.offsetHeight > curPos
     ) {
       links.forEach(a => {
@@ -29,10 +36,6 @@ document.addEventListener('scroll', e => {
     myMenu.querySelector('a.menu-active').classList.remove('menu-active');
     links[links.length - 1].classList.add('menu-active');
   }
-
-  /*   if (myMenu.querySelector('a.menu-active') === null) {
-    links[0].classList.add('menu-active');
-  } */
 });
 
 /* Screen */
@@ -139,24 +142,6 @@ myTab.addEventListener('click', e => {
   e.target.classList.add('tab-active');
 });
 
-/* myTab.addEventListener('click', e => {
-  const tabs = myTab.querySelectorAll('li');
-  if (e.target.tagName === 'LI' && !e.target.classList.contains('tab-active')) {
-    tabs.forEach(el => el.classList.remove('tab-active'));
-
-    picturesSrc = [];
-    picturesShuffle.forEach(el => picturesSrc.push(el.src));
-    picturesSrc.sort(() => Math.random() - 1);
-    for (let i = 0; i < picturesSrc.length; i++) {
-      picturesShuffle[i].src = picturesSrc[i];
-    }
-
-    picturesShuffle.forEach(el => el.classList.remove('pic-active'));
-  }
-
-  e.target.classList.add('tab-active');
-}); */
-
 myPictures.addEventListener('click', e => {
   if (e.target.tagName === 'IMG') {
     borderImg.forEach(el => {
@@ -177,12 +162,12 @@ myForm.addEventListener('submit', e => {
   e.preventDefault();
   if (myForm.checkValidity()) {
     document.querySelector(
-      '.pop-up__message_subject span'
+      '.pop-up__message-subject span'
     ).innerText = document.querySelector('.subject').value
       ? document.querySelector('.subject').value
       : 'no subject';
     document.querySelector(
-      '.pop-up__message_description span'
+      '.pop-up__message-description span'
     ).innerText = document.querySelector('.description').value
       ? document.querySelector('.description').value
       : 'no description';
@@ -196,16 +181,48 @@ btnPopup.addEventListener('click', () => {
   myPopup.classList.add('pop-up__hidden');
   document.body.style.overflow = 'auto';
   myForm.reset();
-  /*   document.querySelector('.pop-up__message').style.animationName =
-    'pop-up-zoom';
-  document.querySelector('.pop-up__message').style.animationDirection =
-    'reverse'; */
 });
 
 /* Burger */
 
 const btnBurger = document.querySelector('.header__burger');
+const btnBurgerMenu = document.querySelector('nav');
+const burgerLogo = document.querySelector('.burger-logo');
 
-btnBurger.addEventListener('click', () => {
+btnBurger.addEventListener('click', e => {
+  e.preventDefault();
   btnBurger.classList.toggle('burger-active');
+  btnBurgerMenu.classList.toggle('burger-menu-active');
+
+  if (btnBurgerMenu.classList.contains('burger-menu-active')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
+
+  if (burgerLogo.style.display === 'block') {
+    burgerLogo.style.display = 'none';
+  } else {
+    burgerLogo.style.display = 'block';
+  }
+});
+
+const burgerMenu = document.querySelector('header ul');
+console.log(burgerMenu);
+
+burgerMenu.addEventListener('click', e => {
+  if (e.target.tagName === 'A') {
+    btnBurger.classList.remove('burger-active');
+    console.log(btnBurger);
+    btnBurgerMenu.classList.remove('burger-menu-active');
+    console.log(btnBurgerMenu);
+
+    if (burgerLogo.style.display === 'block') {
+      burgerLogo.style.display = 'none';
+    } else {
+      burgerLogo.style.display = 'block';
+    }
+  }
+
+  document.body.style.overflow = 'auto';
 });
