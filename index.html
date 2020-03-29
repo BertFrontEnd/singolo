@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Singolo DOM</title>
+    <title>Singolo Responsive</title>
     <link rel="stylesheet" href="fonts.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./assets/img/favicon.png" type="image/png" />
   </head>
   <body>
     <svg style="display:none">
@@ -69,24 +70,34 @@
     </svg>
 
     <header class="header">
-      <div class="container">
-        <div class="header__inner">
-          <h1 class="header__logo">Singolo<span>*</span></h1>
-          <nav class="header__menu">
-            <ul>
-              <li><a class="menu-active" href="#slider">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#portfolio">Portfolio</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#quote">Contact</a></li>
-            </ul>
-          </nav>
+      <section class="home">
+        <div class="container">
+          <div class="header__inner">
+            <div class="header__burger">
+              <a href="#">
+                <span class="burger-line"></span>
+                <span class="burger-logo">
+                  <h2>Singolo<span>*</span></h2>
+                </span>
+              </a>
+            </div>
+            <h1 class="header__logo">Singolo<span>*</span></h1>
+            <nav class="header__menu">
+              <ul>
+                <li><a class="link menu-active" href="#home">Home</a></li>
+                <li><a class="link" href="#services">Services</a></li>
+                <li><a class="link" href="#portfolio">Portfolio</a></li>
+                <li><a class="link" href="#about">About</a></li>
+                <li><a class="link" href="#quote">Contact</a></li>
+              </ul>
+            </nav>
+          </div>
         </div>
-      </div>
+      </section>
     </header>
 
     <main class="main">
-      <section id="slider" class="slider for-scroll">
+      <section id="home" class="slider for-scroll">
         <div class="container">
           <div class="slider__inner">
             <div class="slider__prev arrow"></div>
@@ -96,37 +107,37 @@
                   <img
                     src="assets/img/slider/iphone-vertical.svg"
                     alt="Vertical-Iphone"
-                    width="215"
-                    height="458"
+                    width="240"
+                    height="483"
                   />
+                  <div class="slider__iphone_vertical-home"></div>
+                  <div class="slider__iphone_vertical-pic"></div>
                 </div>
-                <div class="slider__iphone_vertical-home"></div>
-                <div class="slider__iphone_vertical-pic"></div>
-                <div class="slider__iphone_vertical-shadow"></div>
                 <div class="slider__iphone_horizontal">
                   <img
                     src="assets/img/slider/iphone-horizontal.svg"
                     alt="iphone-horizontal"
-                    width="458"
-                    height="215"
+                    width="483"
+                    height="240"
                   />
+                  <div class="slider__iphone_horizontal-home"></div>
+                  <div class="slider__iphone_horizontal-pic"></div>
                 </div>
-                <div class="slider__iphone_horizontal-home"></div>
-                <div class="slider__iphone_horizontal-pic"></div>
-                <div class="slider__iphone_horizontal-shadow"></div>
               </div>
               <div class="slider__iphone_middle phone">
-                <img
-                  src="assets/img/slider/iphone-middle.png"
-                  alt="Middle-Iphone"
-                  width="516"
-                  height="513"
-                />
-                <div class="slider__iphone_middle-home"></div>
-                <div class="slider__iphone_middle-pic"></div>
+                <div class="slider__iphone_triple">
+                  <img
+                    src="assets/img/slider/iphone-middle.png"
+                    alt="Middle-Iphone"
+                    width="516"
+                    height="513"
+                  />
+                  <div class="slider__iphone_middle-home"></div>
+                  <div class="slider__iphone_middle-pic"></div>
+                </div>
               </div>
+              <div class="slider__next arrow"></div>
             </div>
-            <div class="slider__next arrow"></div>
           </div>
         </div>
       </section>
@@ -460,7 +471,7 @@
               </p>
             </div>
             <div class="quote__info">
-              <div class="quote__info_form">
+              <div class="quote__info-form">
                 <form action="/" method="POST" name="quote">
                   <input
                     class="for-moz"
@@ -492,7 +503,7 @@
                   <button class="for-moz" type="submit">Send</button>
                 </form>
               </div>
-              <div class="quote__info_contact for-moz">
+              <div class="quote__info-contact for-moz">
                 <h3>Contact Information</h3>
                 <p>
                   Quisque hendrerit purus dapibus, ornare nibh vitae,
@@ -525,10 +536,10 @@
         <div class="pop-up__inner">
           <div class="pop-up__message">
             <h3>The letter was sent</h3>
-            <div class="pop-up__message_subject">
+            <div class="pop-up__message-subject">
               <p>Subject: <span></span></p>
             </div>
-            <div class="pop-up__message_description">
+            <div class="pop-up__message-description">
               <p>Description: <span></span></p>
             </div>
             <button>OK</button>
